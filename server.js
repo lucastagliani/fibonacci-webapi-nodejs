@@ -8,7 +8,7 @@ const port = 8000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-MongoClient.connect(db.url, (error, database) => {  
+MongoClient.connect(db.url, { useNewUrlParser: true }, (error, database) => {  
     if (error) {
         return console.log(error)                        
     }

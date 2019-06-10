@@ -4,9 +4,9 @@ module.exports = function (app, db) {
 
         const note = { text: req.body.body, title: req.body.title }
 
-        db.collection('notes').insert(note, (err, result) => {
+        db.collection('notes').insertOne(note, (err, result) => {
             if (err) {
-                res.send({ 'error': 'An error has occurred on insert' });
+                res.send({ 'error': 'An error has occurred on insertOne' });
             } else {
                 res.send(result.ops[0]);
             }
@@ -32,7 +32,7 @@ module.exports = function (app, db) {
         const id = req.params.id;
         const details = { '_id': new ObjectID(id) };
 
-        db.collection('notes').remove(details, (error, item) => {
+        db.collection('notes').deleteOne(details, (error, item) => {
             if (error) {
                 res.send({ 'error': 'An error has occurred on remove' });
             } else if (!item) {
@@ -48,7 +48,7 @@ module.exports = function (app, db) {
         const details = { '_id': new ObjectID(id) };
         const note = { text: req.body.body, title: req.body.title };
 
-        db.collection('notes').update(details, note, (error, item) => {
+        db.collection('notes').updateOne(details, note, (error, item) => {
             if (error) {
                 res.send({ 'error': 'An error has occurred on remove' });
             } else if (!item) {
