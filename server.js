@@ -1,34 +1,23 @@
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
-const db = require('./config/db');
+
+const PORT = process.env.PORT || 8000;
+const MONGODB_URL = process.env.MONGODB_URL || 'mongodb://localhost:27017/YourDB';
 
 const app = express();
-const port = 8000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-MongoClient.connect(db.url, { useNewUrlParser: true }, (error, database) => {  
+MongoClient.connect(MONGODB_URL, { useNewUrlParser: true }, (error, database) => {  
     if (error) {
         return console.log(error)                        
     }
 
-    // Make sure you add the database name and not the collection name  
     const notesdb = database.db("notes-db")  
     require('./app/routes')(app, notesdb);
 
-    app.listen(port, () => {
-        console.log('Started on port', port);
+    app.listen(PORT, () => {
+        console.log('Started on port', PORT);
     });
 })
-// MongoClient.connect(db.url, (error, database) => {
-//     if (error) {
-//         return console.log(error)
-//     }
-
-//     require('./app/routes')(app, database);
-
-//     app.listen(port, () => {
-//         console.log('Started on port', port);
-//     });
-// })
