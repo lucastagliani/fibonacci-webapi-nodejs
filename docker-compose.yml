@@ -1,0 +1,12 @@
+version: '2.1'
+services:
+  mongo:
+    image: "healthcheck/mongo"
+    ports:
+      - "27017:27017"
+    mem_limit: 1024m
+    logging:
+      driver: none
+    healthcheck:
+      interval: 1s
+      retries: 10
