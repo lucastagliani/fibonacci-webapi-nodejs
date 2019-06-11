@@ -7,7 +7,7 @@ const MONGODB_URL = process.env.MONGODB_URL || 'mongodb://localhost:27017/YourDB
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 MongoClient.connect(MONGODB_URL, { useNewUrlParser: true }, (error, database) => {  
     if (error) {

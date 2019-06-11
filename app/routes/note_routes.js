@@ -29,7 +29,7 @@ module.exports = function (app, db) {
 
     app.post('/notes', (req, res) => {
 
-        const note = { text: req.body.body, title: req.body.title }
+        const note = { text: req.body.text, title: req.body.title }
 
         db.collection('notes').insertOne(note, (err, result) => {
             if (err) {
@@ -58,7 +58,7 @@ module.exports = function (app, db) {
     app.put('/notes/:id', (req, res) => {
         const id = req.params.id;
         const query = { '_id': new ObjectID(id) };
-        const note = { text: req.body.body, title: req.body.title };
+        const note = { text: req.body.text, title: req.body.title };
 
         db.collection('notes').updateOne(query, { $set: note }, (error, item) => {
             if (error) {
