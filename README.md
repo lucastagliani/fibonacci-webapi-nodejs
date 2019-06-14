@@ -43,7 +43,9 @@ Well, no data at all because you didn't posted anything.
 * [Postman requests](https://www.getpostman.com/collections/c1854f5ad0a1568e0d5c)
 <!-- TODO: Add API documentation -->
 
+## Extra
 
+Dockerfile built based on [this](https://nodejs.org/de/docs/guides/nodejs-docker-webapp/) tutorial
 
 
 
