@@ -3,7 +3,7 @@ const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 8000;
-const MONGODB_URL = process.env.MONGODB_URL || 'mongodb://localhost:27017/YourDB';
+const MONGODB_URL = process.env.MONGODB_URL || 'mongodb://localhost:27017/notes';
 
 const app = express();
 

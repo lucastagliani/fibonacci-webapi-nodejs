@@ -4,15 +4,25 @@ services:
     image: "healthcheck/mongo"
     ports:
       - "27017:27017"
+    expose:
+      - 27017
     logging:
       driver: none
     healthcheck:
       interval: 1s
       retries: 10
   web:
+    network_mode: host
     build: .
     depends_on: 
       - mongo
     ports:
       - "8080:8080"
+    expose:
+      - 8080
+    # links:
+    #   - mongo
+    environment: 
+      PORT: 8080
+      MONGODB_URL: "mongodb://localhost:27017/notes"
   
