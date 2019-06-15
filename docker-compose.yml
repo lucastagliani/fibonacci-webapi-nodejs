@@ -1,6 +1,6 @@
 version: '3'
 services:
-  mongo:
+  db:
     image: "healthcheck/mongo"
     ports:
       - "27017:27017"
@@ -12,17 +12,17 @@ services:
       interval: 1s
       retries: 10
   web:
-    network_mode: host
+    # network_mode: host
     build: .
     depends_on: 
-      - mongo
+      - db
     ports:
       - "8080:8080"
     expose:
       - 8080
-    # links:
-    #   - mongo
+    links:
+      - db
     environment: 
       PORT: 8080
-      MONGODB_URL: "mongodb://localhost:27017/notes"
+      MONGODB_URL: "mongodb://db:27017/notes"
   
