@@ -12,7 +12,7 @@ Here you will find a simple node.js application with CRUD operations on model 'n
 
 ## How to run it
 
-Open your terminal, choose your folder and...
+Open your terminal, go to your projects folder and...
 
 1. Clone the repository: 
 
@@ -24,7 +24,7 @@ Open your terminal, choose your folder and...
 
 3. Install dependencies: `npm install`
 
-4. You have 2 options for running the webapi:
+4. You have 2 options for running this webapi:
 
     A. The easiest way is with `docker-compose up -d`. It will start a container with mongo server AND the webapi itself. _You will need [docker-compose](https://docs.docker.com/compose/) on your computer_. 
 
