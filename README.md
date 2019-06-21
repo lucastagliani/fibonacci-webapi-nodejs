@@ -1,5 +1,8 @@
 # notes-webapi-nodejs
 
+[![CircleCI](https://circleci.com/gh/lucastagliani/notes-webapi-nodejs.svg?style=svg)](https://circleci.com/gh/lucastagliani/notes-webapi-nodejs)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge&style=flat)](https://notes-webapi-nodejs.herokuapp.com/notes)
+
 Repository based on [this](https://www.freecodecamp.org/news/building-a-simple-node-js-api-in-under-30-minutes-a07ea9e390d2/) tutorial.
 
 Here you will find a simple node.js application with CRUD operations on model 'notes'.
