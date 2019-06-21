@@ -18,6 +18,6 @@ MongoClient.connect(MONGODB_URL, { useNewUrlParser: true }, (error, database) =>
     require('./app/routes')(app, notesdb);
 
     app.listen(PORT, () => {
-        console.log('Started on port', PORT);
+        console.log('Started version 0.7 on port', PORT);
     });
 })
