@@ -16,7 +16,7 @@ Open your terminal, choose your folder and...
 
 1. Clone the repository: 
 
-    HTTP: `git clone https://github.com/lucastagliani/notes-webapi-nodejs.git`
+    HTTP: `git clone https://github.com/lucastagliani/notes-webapi-nodejs.git`  
     or  
     SSH: `git clone git@github.com:lucastagliani/notes-webapi-nodejs.git`  
 
@@ -24,9 +24,13 @@ Open your terminal, choose your folder and...
 
 3. Install dependencies: `npm install`
 
-4. If you do not want to run Mongo locally, you will need to `docker-compose up -d`
+4. You have 2 options for running the webapi:
 
-5. Run API: `npm start`
+    A. The easiest way is with `docker-compose up -d`. It will start a container with mongo server AND the webapi itself. _You will need [docker-compose](https://docs.docker.com/compose/) on your computer_. 
+
+    or
+
+    B. Start mongo server locally with `mongod` and, after it is up, start the web app with `npm start`. _You will need [mongo server](https://www.mongodb.com/download-center/community) on your computer_.
 
     _It will be probably running on http://localhost:8000_
 
@@ -34,13 +38,13 @@ Open your terminal, choose your folder and...
 
 If you hit http://localhost:8000/notes on your browser or API app (for example Postman), you should get this returned: 
 
-`{}`
+`[]`
 
 Well, no data at all because you didn't posted anything.
 
 ## Documentation
 
-* [Postman requests](https://www.getpostman.com/collections/c1854f5ad0a1568e0d5c)
+You can do the basic CRUD operations, you will find the requests here: * [Postman requests](https://www.getpostman.com/collections/c1854f5ad0a1568e0d5c)
 <!-- TODO: Add API documentation -->
 
 ## Extra
