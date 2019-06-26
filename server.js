@@ -16,7 +16,7 @@ MongoClient.connect(MONGODB_URL, { useNewUrlParser: true }, (error, database) =>
     }
 
     const notesdb = database.db("notes-db")  
-    require('./app/routes')(app, notesdb);
+    require('./src/app/routes')(app, notesdb);
 
     app.listen(PORT, () => {
         console.log(`Started version ${packageJson.version} on port ${PORT}`);
